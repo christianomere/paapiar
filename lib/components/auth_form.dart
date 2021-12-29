@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:paapiar/components/user_image_picker.dart';
-import 'package:paapiar/models/auth_form_data.dart';
+import 'package:paapiar/core/models/auth_form_data.dart';
 import 'paapiar_svg.dart';
 
 class AuthForm extends StatefulWidget {
@@ -52,9 +52,9 @@ class _AuthFormState extends State<AuthForm> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Spacer(),
-        if(_formData.isLogin)
-          UserImagePicker(onImagePick:_handleImagePick),
         if(!_formData.isLogin)
+          UserImagePicker(onImagePick:_handleImagePick),
+        if(_formData.isLogin)
         Padding(
           padding: const EdgeInsets.only(right: 25.0),
           child: Container(
@@ -70,14 +70,14 @@ class _AuthFormState extends State<AuthForm> {
           child: Container(
             color: Colors.white,
             width: double.infinity,
-            height: _formData.isLogin ? 430.0 : 365,
+            height: _formData.isLogin ? 365 : 430.0,
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 children: [
                   Row(
                     children: [
-                      Text(_formData.isLogin ? 'Cadastrar' : 'Entrar',
+                      Text(_formData.isLogin ? 'Entrar' : 'Cadastrar',
                         style: TextStyle(
                           fontFamily: 'SF Pro Text',
                           fontSize: 30,
@@ -87,7 +87,7 @@ class _AuthFormState extends State<AuthForm> {
                       ),
                       Spacer(),
                       TextButton(
-                        child: Text(_formData.isLogin ? 'Já sou cadastrado' : 'Não sou cadastrado',
+                        child: Text(_formData.isLogin ? 'Não sou cadastrado' : 'Já sou cadastrado',
                         style: TextStyle(
                           fontFamily: 'SF Pro Text',
                           fontSize: 20,
@@ -105,7 +105,7 @@ class _AuthFormState extends State<AuthForm> {
                     ],
                   ),
                   SizedBox( height: 20.0,),
-                  if(_formData.isLogin)
+                  if(!_formData.isLogin)
                   TextFormField(
                     key: ValueKey('name'),
                     initialValue: _formData.name,
@@ -157,6 +157,7 @@ class _AuthFormState extends State<AuthForm> {
                   ),
                   SizedBox( height: 15.0),
                   TextFormField(
+                    obscureText: true,
                     key: ValueKey('password'),
                     initialValue: _formData.password,
                     onChanged: (password) => _formData.password = password,

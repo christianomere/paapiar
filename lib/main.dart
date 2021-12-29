@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paapiar/pages/auth_page.dart';
+import 'package:paapiar/pages/auth_or_app_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           fontFamily: 'SF Pro Text'
       ),
-      home: AuthPage(),
+      home: AuthOrAppPage(),
       debugShowCheckedModeBanner: false,
     );
   }

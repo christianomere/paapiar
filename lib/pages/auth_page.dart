@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paapiar/components/auth_form.dart';
-import 'package:paapiar/models/auth_form_data.dart';
+import 'package:paapiar/core/models/auth_form_data.dart';
+import 'package:paapiar/core/services/auth/auth_mock_service.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -12,14 +13,21 @@ class AuthPage extends StatefulWidget {
 class _AuthPageState extends State<AuthPage> {
   bool _isLoadin = false;
 
-  void _handleSubmit(AuthFormData formData){
-    setState(() => _isLoadin = true);
+  Future<void> _handleSubmit(AuthFormData formData) async {
+    try {
+      setState(() => _isLoadin = true);
 
-    print('AuthPage');
-    print(formData.email);
+      if(formData.isLogin){
+        await AuthMockService().login(formData.email, formData.password);
+      } else{
+        await AuthMockService().sigup(formData.name, formData.email, formData.password, formData.image);
+      }
 
-    setState(() => _isLoadin = false);
-
+    } catch(error){
+      //error
+    } finally{
+      setState(() => _isLoadin = false);
+    }
   }
 
   @override
