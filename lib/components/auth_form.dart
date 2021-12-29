@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:paapiar/components/user_image_picker.dart';
 import 'package:paapiar/models/auth_form_data.dart';
 import 'paapiar_svg.dart';
 
@@ -18,9 +21,28 @@ class _AuthFormState extends State<AuthForm> {
   final _formKey = GlobalKey<FormState>();
   final _formData = AuthFormData();
 
+
+  void _handleImagePick(File image) {
+    _formData.image = image;
+  }
+
+  void _showError(String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(msg),
+        backgroundColor: Theme.of(context).errorColor,
+      ),
+    );
+  }
+
   void _submit(){
     final isValid = _formKey.currentState?.validate() ?? false;
     if(!isValid) return;
+
+    if (_formData.image == null && _formData.isSinup) {
+      return _showError('Imagem não selecionada!');
+    }
+
     widget.onSubmit(_formData);
   }
 
@@ -30,6 +52,9 @@ class _AuthFormState extends State<AuthForm> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Spacer(),
+        if(_formData.isLogin)
+          UserImagePicker(onImagePick:_handleImagePick),
+        if(!_formData.isLogin)
         Padding(
           padding: const EdgeInsets.only(right: 25.0),
           child: Container(
@@ -52,7 +77,7 @@ class _AuthFormState extends State<AuthForm> {
                 children: [
                   Row(
                     children: [
-                      Text(_formData.isLogin ? 'Entrar' : 'Cadastrar',
+                      Text(_formData.isLogin ? 'Cadastrar' : 'Entrar',
                         style: TextStyle(
                           fontFamily: 'SF Pro Text',
                           fontSize: 30,
@@ -62,7 +87,7 @@ class _AuthFormState extends State<AuthForm> {
                       ),
                       Spacer(),
                       TextButton(
-                        child: Text(_formData.isLogin ? 'Não sou cadastrado' : 'Já sou cadastrado' ,
+                        child: Text(_formData.isLogin ? 'Já sou cadastrado' : 'Não sou cadastrado',
                         style: TextStyle(
                           fontFamily: 'SF Pro Text',
                           fontSize: 20,

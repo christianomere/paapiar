@@ -11,6 +11,7 @@ class AuthPage extends StatefulWidget {
 
 class _AuthPageState extends State<AuthPage> {
   bool _isLoadin = false;
+
   void _handleSubmit(AuthFormData formData){
     setState(() => _isLoadin = true);
 
