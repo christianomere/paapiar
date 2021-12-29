@@ -12,6 +12,7 @@ class AuthOrAppPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: StreamBuilder<PaapiarUser?>(
+
         stream: AuthMockService().userChanges,
         builder: (ctx, snapshot){
           if(snapshot.connectionState == ConnectionState.waiting){
