@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paapiar/components/auth_form.dart';
 import 'package:paapiar/core/models/auth_form_data.dart';
-import 'package:paapiar/core/services/auth/auth_mock_service.dart';
+import 'package:paapiar/core/services/auth/auth_service.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -18,9 +18,9 @@ class _AuthPageState extends State<AuthPage> {
       setState(() => _isLoadin = true);
 
       if(formData.isLogin){
-        await AuthMockService().login(formData.email, formData.password);
+        await AuthService().login(formData.email, formData.password);
       } else{
-        await AuthMockService().sigup(formData.name, formData.email, formData.password, formData.image);
+        await AuthService().sigup(formData.name, formData.email, formData.password, formData.image);
       }
 
     } catch(error){

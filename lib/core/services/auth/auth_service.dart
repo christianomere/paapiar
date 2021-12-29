@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:paapiar/core/models/paapiar_user.dart';
+import 'package:paapiar/core/services/auth/auth_mock_service.dart';
 
 abstract class AuthService {
   PaapiarUser? get currentUser;
@@ -9,7 +10,7 @@ abstract class AuthService {
       String name,
       String email,
       String password,
-      File image,
+      File? image,
       );
 
   Future<void> login(
@@ -18,4 +19,8 @@ abstract class AuthService {
       );
 
   Future<void> logout();
+
+  factory AuthService(){
+    return AuthMockService();
+  }
 }

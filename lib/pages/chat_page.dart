@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paapiar/core/services/auth/auth_mock_service.dart';
+import 'package:paapiar/core/services/auth/auth_service.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class ChatPage extends StatelessWidget {
                 child: Text('ChatPage'),
             ),
             TextButton(
-            onPressed: (){AuthMockService().logout();},
+            onPressed: (){AuthService().logout();},
              child: Text('Logout'),)
           ],
         ),

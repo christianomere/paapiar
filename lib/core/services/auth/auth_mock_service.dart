@@ -5,12 +5,17 @@ import 'package:paapiar/core/models/paapiar_user.dart';
 import 'package:paapiar/core/services/auth/auth_service.dart';
 
 class AuthMockService implements AuthService{
-  static Map<String, PaapiarUser> _users = {};
+
+  static final _defaultUser = PaapiarUser(id: '1', name: 'test', email: 'teste@test', imageURL: 'assets/images/avatar.png');
+
+  static Map<String, PaapiarUser> _users = {
+    _defaultUser.email: _defaultUser
+  };
   static PaapiarUser? _currentUser;
   static MultiStreamController<PaapiarUser?>? _controller;
   static final _userStream = Stream<PaapiarUser?>.multi((controller) {
     _controller = controller;
-    _updateUser(null);
+    _updateUser(_defaultUser);
   });
 
   PaapiarUser? get currentUser{
@@ -31,7 +36,7 @@ class AuthMockService implements AuthService{
         id: Random().nextDouble().toString(),
         name: name,
         email: email,
-        imageURL: image?.path ?? 'assets/images/...'
+        imageURL: image?.path ?? 'assets/images/avatar.png'
     );
     _users.putIfAbsent(email, () => newUser);
     _updateUser(newUser);
