@@ -6,7 +6,11 @@ import 'package:paapiar/core/services/auth/auth_service.dart';
 
 class AuthMockService implements AuthService{
 
-  static final _defaultUser = PaapiarUser(id: '1', name: 'test', email: 'teste@test', imageURL: 'assets/images/avatar.png');
+  static final _defaultUser = PaapiarUser(
+      id: '456',
+      name: 'Igor',
+      email: 'igor@test',
+      imageURL: 'assets/images/avatar.png');
 
   static Map<String, PaapiarUser> _users = {
     _defaultUser.email: _defaultUser
