@@ -34,6 +34,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_svg: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +62,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+     - assets/svg/paapiar_img.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -83,7 +86,28 @@ flutter:
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  #         weight:
+  fonts:
+    - family: SF Pro Text
+      fonts:
+           - asset: fonts/SF-Pro-Text-Black.otf
+           - asset: fonts/SF-Pro-Text-BlackItalic.otf
+           - asset: fonts/SF-Pro-Text-Bold.otf
+           - asset: fonts/SF-Pro-Text-BoldItalic.otf
+           - asset: fonts/SF-Pro-Text-Heavy.otf
+           - asset: fonts/SF-Pro-Text-HeavyItalic.otf
+           - asset: fonts/SF-Pro-Text-Light.otf
+           - asset: fonts/SF-Pro-Text-LightItalic.otf
+           - asset: fonts/SF-Pro-Text-Medium.otf
+           - asset: fonts/SF-Pro-Text-MediumItalic.otf
+           - asset: fonts/SF-Pro-Text-Regular.otf
+           - asset: fonts/SF-Pro-Text-RegularItalic.otf
+           - asset: fonts/SF-Pro-Text-Semibold.otf
+           - asset: fonts/SF-Pro-Text-SemiboldItalic.otf
+           - asset: fonts/SF-Pro-Text-Thin.otf
+           - asset: fonts/SF-Pro-Text-ThinItalic.otf
+           - asset: fonts/SF-Pro-Text-Ultralight.otf
+           - asset: fonts/SF-Pro-Text-UltralightItalic.otf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
