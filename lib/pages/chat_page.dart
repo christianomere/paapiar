@@ -42,42 +42,60 @@ class ChatPage extends StatelessWidget {
               items: [
                 DropdownMenuItem(
                   value: 'perfil',
-                  child: Container(
-                    child: Text('Meu Perfil',
-                      style: TextStyle(
-                        fontFamily: 'SF Pro Text',
-                        fontSize: 15,
-                        color:  Color(0xff4772ff),
-                        fontWeight: FontWeight.w200,
+                  child: Row(
+                    children: [
+                      Icon(Icons.person_outline,
+                          color:  Color(0xff4772ff),
                       ),
-                    ),
+                      SizedBox(width: 10.0),
+                      Text('Meu Perfil',
+                        style: TextStyle(
+                          fontFamily: 'SF Pro Text',
+                          fontSize: 15,
+                          color:  Color(0xff4772ff),
+                          fontWeight: FontWeight.w200,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 DropdownMenuItem(
                   value: 'contacts',
-                  child: Container(
-                    child: Text('Meus Amigos',
-                      style: TextStyle(
-                        fontFamily: 'SF Pro Text',
-                        fontSize: 15,
+                  child: Row(
+                    children: [
+                      Icon(Icons.people_outline,
                         color:  Color(0xff4772ff),
-                        fontWeight: FontWeight.w200,
                       ),
-                    ),
+                      SizedBox(width: 10.0),
+                      Text('Meus Amigos',
+                        style: TextStyle(
+                          fontFamily: 'SF Pro Text',
+                          fontSize: 15,
+                          color:  Color(0xff4772ff),
+                          fontWeight: FontWeight.w200,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 DropdownMenuItem(
                   value: 'settings',
-                  child: Container(
-                    child: Text('Configurações',
-                      style: TextStyle(
-                        fontFamily: 'SF Pro Text',
-                        fontSize: 15
-                        ,
+                  child: Row(
+                    children: [
+                      Icon(Icons.settings_outlined,
                         color:  Color(0xff4772ff),
-                        fontWeight: FontWeight.w200,
                       ),
-                    ),
+                      SizedBox(width: 10.0),
+                      Text('Configurações',
+                        style: TextStyle(
+                          fontFamily: 'SF Pro Text',
+                          fontSize: 15
+                          ,
+                          color:  Color(0xff4772ff),
+                          fontWeight: FontWeight.w200,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 DropdownMenuItem(
@@ -106,7 +124,9 @@ class ChatPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(child: Messages()),
+            Expanded(
+                child: Messages(),
+            ),
             NewMessage(),
           ],
         ),

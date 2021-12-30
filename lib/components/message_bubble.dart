@@ -52,7 +52,6 @@ class MessageBubble extends StatelessWidget {
                 ),),
             ),
             Container(
-                height: 100.0,
                 width: 330.0,
                 margin: const EdgeInsets.symmetric(
                   horizontal: 15.0
@@ -72,12 +71,15 @@ class MessageBubble extends StatelessWidget {
                       ),
                       if(belongsToCurrentUser)
                       Spacer(),
-                      Text(message.text,
-                        style: TextStyle(
-                          fontFamily: 'SF Pro Text',
-                          fontSize: 15,
-                          color: const Color(0xffffffff),
-                          height: 1.2,
+                      Expanded(
+                        child: Text(message.text,
+                          textAlign: belongsToCurrentUser ? TextAlign.right : TextAlign.left,
+                          style: TextStyle(
+                            fontFamily: 'SF Pro Text',
+                            fontSize: 15,
+                            color: const Color(0xffffffff),
+                            height: 1.2,
+                          ),
                         ),
                       ),
                       if(belongsToCurrentUser)
@@ -91,7 +93,7 @@ class MessageBubble extends StatelessWidget {
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35.0),
-              child: Text('hoje',
+              child: Text('12, Dec, 20:45',
                 style: TextStyle(
                   fontFamily: 'SF Pro Text',
                   fontSize: 12,

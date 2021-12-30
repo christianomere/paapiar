@@ -26,12 +26,12 @@ class Messages extends StatelessWidget {
             final msgs = snapshot.data!;
             return ListView.builder(
               reverse: true,
-                itemCount: msgs.length ,
-                itemBuilder: (ctx, i) => MessageBubble(
-                    key: ValueKey(msgs[i].id) ,
-                    message: msgs[i],
-                    belongsToCurrentUser: currentUser?.id == msgs[i].userId
-                ),
+              itemCount: msgs.length ,
+              itemBuilder: (ctx, i) => MessageBubble(
+                key: ValueKey(msgs[i].id) ,
+                message: msgs[i],
+                belongsToCurrentUser: currentUser?.id == msgs[i].userId
+              ),
             );
           }
         }
