@@ -53,13 +53,24 @@ class ChatPage extends StatelessWidget {
                             color:  Color(0xff4772ff),
                         ),
                         SizedBox(width: 10.0),
-                        Text('Meu Perfil',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 15,
-                            color:  Color(0xff4772ff),
-                            fontWeight: FontWeight.w200,
+                        TextButton(
+                          child: Text('Meu Perfil',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Text',
+                              fontSize: 15,
+                              color:  Color(0xff4772ff),
+                              fontWeight: FontWeight.w200,
+                            ),
                           ),
+                          onPressed: (){
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (ctx){
+                                  return NotificationPage();
+                                },
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -72,13 +83,24 @@ class ChatPage extends StatelessWidget {
                           color:  Color(0xff4772ff),
                         ),
                         SizedBox(width: 10.0),
-                        Text('Meus Amigos',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 15,
-                            color:  Color(0xff4772ff),
-                            fontWeight: FontWeight.w200,
+                        TextButton(
+                          child: Text('Meus Amigos',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Text',
+                              fontSize: 15,
+                              color:  Color(0xff4772ff),
+                              fontWeight: FontWeight.w200,
+                            ),
                           ),
+                          onPressed: (){
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (ctx){
+                                  return NotificationPage();
+                                },
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -91,13 +113,24 @@ class ChatPage extends StatelessWidget {
                           color:  Color(0xff4772ff),
                         ),
                         SizedBox(width: 10.0),
-                        Text('Configurações',
+                        TextButton(
+                          child: Text('Configurações',
                           style: TextStyle(
                             fontFamily: 'SF Pro Text',
                             fontSize: 15,
                             color:  Color(0xff4772ff),
                             fontWeight: FontWeight.w200,
+                            ),
                           ),
+                          onPressed: (){
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (ctx){
+                                  return NotificationPage();
+                                },
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -121,6 +154,15 @@ class ChatPage extends StatelessWidget {
                           ],
                         ),
                         SizedBox(width: 10.0),
+                        Text(
+                          '${Provider.of<ChatNotificationService>(context).itemsCount}',
+                          style: TextStyle(
+                            fontFamily: 'SF Pro Text',
+                            fontSize: 15,
+                            color:  Color(0xff4772ff),
+                            fontWeight: FontWeight.w200,
+                          ),
+                        ),
                         TextButton(
                           child: Text('Notifications',
                           style: TextStyle(
@@ -135,7 +177,8 @@ class ChatPage extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (ctx){
                                     return NotificationPage();
-                              }),
+                                },
+                              ),
                             );
                           },
                         ),

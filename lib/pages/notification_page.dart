@@ -26,9 +26,16 @@ class NotificationPage extends StatelessWidget {
       ),
       body: Center(
         child: ListView.builder(
-          itemCount: null,
+          itemCount: service.itemsCount,
           itemBuilder:(ctx, i) => ListTile(
-              title: Text(items[i].title),
+              title: Text(items[i].title,
+              style: TextStyle(
+                fontFamily: 'SF Pro Text',
+                fontSize: 15,
+                color:  Color(0xff4772ff),
+                fontWeight: FontWeight.w500,
+                ),
+              ),
               subtitle:Text(items[i].body) ,
                onTap: () => service.remove(i),
             ),

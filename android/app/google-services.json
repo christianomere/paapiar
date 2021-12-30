@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "466270473905",
+    "project_id": "paapiar-chat",
+    "storage_bucket": "paapiar-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466270473905:android:771d975b2728af5a809c90",
+        "android_client_info": {
+          "package_name": "br.com.christianomere.paapiar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466270473905-qg2gef12sfa2ovpf4jla599fa793ett2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAC9ItBiNwF46hDEJOErMoM6ZuJNhV1cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466270473905-qg2gef12sfa2ovpf4jla599fa793ett2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
