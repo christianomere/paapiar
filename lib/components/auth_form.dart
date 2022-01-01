@@ -123,7 +123,7 @@ class _AuthFormState extends State<AuthForm> {
                     labelText: 'Nome',
                     suffixIcon: Icon(Icons.info_outlined),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(60.0),
+                      borderRadius: BorderRadius.circular(10.0),
                       borderSide: BorderSide(
                         color: const Color(0xff221573),
                         ),
@@ -148,7 +148,7 @@ class _AuthFormState extends State<AuthForm> {
                     labelText: 'Email',
                     suffixIcon: Icon(Icons.info_outlined),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(60.0),
+                      borderRadius: BorderRadius.circular(10.0),
                       borderSide: BorderSide(
                         color: const Color(0xff221573),
                       ),
@@ -174,7 +174,7 @@ class _AuthFormState extends State<AuthForm> {
                     labelText: 'Senha',
                     suffixIcon: Icon(Icons.info_outlined),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(60.0),
+                      borderRadius: BorderRadius.circular(10.0),
                       borderSide: BorderSide(
                         color: const Color(0xff221573),
                       ),

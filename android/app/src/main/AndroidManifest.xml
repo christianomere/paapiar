@@ -2,7 +2,7 @@
     package="com.paapiar.paapiar">
    <application
         android:label="paapiar"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
