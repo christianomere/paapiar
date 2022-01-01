@@ -52,6 +52,7 @@ class MessageBubble extends StatelessWidget {
                 ),),
             ),
             Container(
+              //TODO: ajustar o tamanho do container para o tamanho do texto.
                 width: 330.0,
                 margin: const EdgeInsets.symmetric(
                   horizontal: 15.0
