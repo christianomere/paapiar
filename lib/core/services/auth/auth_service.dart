@@ -6,7 +6,7 @@ abstract class AuthService {
   PaapiarUser? get currentUser;
   Stream<PaapiarUser?> get userChanges;
 
-  Future<void> sigup(
+  Future<void> signup(
       String name,
       String email,
       String password,

@@ -30,7 +30,7 @@ class AuthMockService implements AuthService{
     return _userStream;
   }
 
-  Future<void> sigup(
+  Future<void> signup(
       String name,
       String email,
       String password,

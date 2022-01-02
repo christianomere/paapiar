@@ -11,22 +11,32 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthPageState extends State<AuthPage> {
-  bool _isLoadin = false;
+  bool _isLoading = false;
 
   Future<void> _handleSubmit(AuthFormData formData) async {
     try {
-      setState(() => _isLoadin = true);
+      setState(() => _isLoading = true);
 
-      if(formData.isLogin){
-        await AuthService().login(formData.email, formData.password);
-      } else{
-        await AuthService().sigup(formData.name, formData.email, formData.password, formData.image);
+      if (formData.isLogin) {
+        // Login
+        await AuthService().login(
+          formData.email,
+          formData.password,
+        );
+      } else {
+        // Signup
+        await AuthService().signup(
+          formData.name,
+          formData.email,
+          formData.password,
+          formData.image,
+        );
       }
-
-    } catch(error){
-      //error
-    } finally{
-      setState(() => _isLoadin = false);
+    } catch (error) {
+      print(error.toString());
+      // Tratar erro!
+    } finally {
+      setState(() => _isLoading = false);
     }
   }
 
@@ -38,7 +48,7 @@ class _AuthPageState extends State<AuthPage> {
         children: [
           Center(child: AuthForm(onSubmit: _handleSubmit)
           ),
-          if(_isLoadin) Container(
+          if(_isLoading) Container(
             decoration: BoxDecoration(
                 color: Color(0xCC221573),
             ),

@@ -21,7 +21,6 @@ class _AuthFormState extends State<AuthForm> {
   final _formKey = GlobalKey<FormState>();
   final _formData = AuthFormData();
 
-
   void _handleImagePick(File image) {
     _formData.image = image;
   }
@@ -35,11 +34,11 @@ class _AuthFormState extends State<AuthForm> {
     );
   }
 
-  void _submit(){
+  void _submit() {
     final isValid = _formKey.currentState?.validate() ?? false;
-    if(!isValid) return;
+    if (!isValid) return;
 
-    if (_formData.image == null && _formData.isSinup) {
+    if (_formData.image == null && _formData.isSignup) {
       return _showError('Imagem não selecionada!');
     }
 
@@ -77,7 +76,9 @@ class _AuthFormState extends State<AuthForm> {
                 children: [
                   Row(
                     children: [
-                      Text(_formData.isLogin ? 'Entrar' : 'Cadastrar',
+                      Text(_formData.isLogin
+                          ? 'Entrar'
+                          : 'Cadastrar',
                         style: TextStyle(
                           fontFamily: 'SF Pro Text',
                           fontSize: 30,
@@ -87,7 +88,9 @@ class _AuthFormState extends State<AuthForm> {
                       ),
                       Spacer(),
                       TextButton(
-                        child: Text(_formData.isLogin ? 'Não sou cadastrado' : 'Já sou cadastrado',
+                        child: Text(_formData.isLogin
+                            ? 'Não sou cadastrado'
+                            : 'Já sou cadastrado',
                         style: TextStyle(
                           fontFamily: 'SF Pro Text',
                           fontSize: 20,
@@ -98,7 +101,7 @@ class _AuthFormState extends State<AuthForm> {
                         ),
                         onPressed: (){
                           setState(() {
-                            _formData.toogleAuthMode();
+                            _formData.toggleAuthMode();
                           });
                         },
                       ),
@@ -164,7 +167,7 @@ class _AuthFormState extends State<AuthForm> {
                     validator: (_password){
                       final password = _password ?? '';
                       if(password.length < 6){
-                        return 'senha muito fraca, no minimo 6 letras';
+                        return 'senha muito fraca, no minimo 6 caracteres';
                       }
                       return null;
                     },

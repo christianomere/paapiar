@@ -3,8 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:paapiar/components/messages.dart';
 import 'package:paapiar/components/new_message.dart';
-import 'package:paapiar/components/paapiar_svg.dart';
-import 'package:paapiar/core/models/chat_notification.dart';
 import 'package:paapiar/core/services/auth/auth_service.dart';
 import 'package:paapiar/core/services/notification/chat_notification_service.dart';
 import 'package:provider/provider.dart';
@@ -221,8 +219,7 @@ class ChatPage extends StatelessWidget {
         ),
       ),
 
-
-      /*floatingActionButton: FloatingActionButton(
+   /*   floatingActionButton: FloatingActionButton(
         child: Icon(
           Icons.add
         ),
@@ -234,8 +231,7 @@ class ChatPage extends StatelessWidget {
               body: Random().nextDouble().toString()),
           );
         },
-      ),
-*/
+      ),*/
 
     );
   }
