@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+
 import 'package:paapiar/core/models/paapiar_user.dart';
 import 'package:paapiar/core/services/auth/auth_service.dart';
 
@@ -36,7 +38,7 @@ class AuthFirebaseService implements AuthService {
     if (credential.user == null) return;
 
     // 1. Upload da foto do usuário
-    final imageName = '${credential.user!.uid}.jpg';
+    final imageName = '${credential.user!.uid}.png';
     final imageURL = await _uploadUserImage(image, imageName);
 
     // 2. atualizar os atributos do usuário

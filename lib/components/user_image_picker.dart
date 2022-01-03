@@ -22,8 +22,8 @@ class _UserImagePickerState extends State<UserImagePicker> {
     final picker = ImagePicker();
     final pickedImage = await picker.pickImage(
       source: ImageSource.gallery,
-      imageQuality: 100,
-      maxWidth: 250,
+      imageQuality: 50,
+      maxWidth: 150,
     );
 
     if (pickedImage != null) {
@@ -55,12 +55,9 @@ class _UserImagePickerState extends State<UserImagePicker> {
               fontWeight: FontWeight.w300,
               height: 1.95,
             ),
-
-
           ),
         ),
       ],
-
     );
   }
 }

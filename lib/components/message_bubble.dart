@@ -33,6 +33,7 @@ class MessageBubble extends StatelessWidget {
   }
 
   @override
+
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: belongsToCurrentUser ? MainAxisAlignment.end : MainAxisAlignment.start,
@@ -86,7 +87,8 @@ class MessageBubble extends StatelessWidget {
                       if(belongsToCurrentUser)
                       Padding(
                         padding: const EdgeInsets.only(left: 10.0),
-                        child: _showUserImage(message.userImageURL),),
+                        child: _showUserImage(message.userImageURL),
+                      ),
                     ],
                   ),
                 ),
@@ -94,7 +96,7 @@ class MessageBubble extends StatelessWidget {
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35.0),
-              child: Text('12, Dec, 20:45',
+              child: Text('enviada a ${message.createdAt.hour.toString()}:${message.createdAt.minute.toString()}',
                 style: TextStyle(
                   fontFamily: 'SF Pro Text',
                   fontSize: 12,

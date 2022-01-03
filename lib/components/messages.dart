@@ -28,7 +28,7 @@ class Messages extends StatelessWidget {
               reverse: true,
               itemCount: msgs.length ,
               itemBuilder: (ctx, i) => MessageBubble(
-                key: ValueKey(msgs[i].id) ,
+                key: ValueKey(msgs[i].id),
                 message: msgs[i],
                 belongsToCurrentUser: currentUser?.id == msgs[i].userId
               ),
